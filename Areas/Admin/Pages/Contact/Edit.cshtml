@@ -1,0 +1,88 @@
+@page
+@model demo_school_website.Areas.Admin.Pages.Contact.EditModel
+@{
+    ViewData["Title"] = "Edit Contact Information";
+}
+
+<div class="container">
+    <h1>Edit Contact Information</h1>
+    <hr />
+    
+    <form method="post" class="admin-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+        <input type="hidden" asp-for="ContactInfo.Id" />
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label asp-for="ContactInfo.Address" class="form-label"></label>
+                    <textarea asp-for="ContactInfo.Address" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="ContactInfo.Address" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label asp-for="ContactInfo.Phone" class="form-label"></label>
+                    <input asp-for="ContactInfo.Phone" class="form-control" />
+                    <span asp-validation-for="ContactInfo.Phone" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label asp-for="ContactInfo.Email" class="form-label"></label>
+                    <input asp-for="ContactInfo.Email" class="form-control" type="email" />
+                    <span asp-validation-for="ContactInfo.Email" class="text-danger"></span>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label asp-for="ContactInfo.FacebookUrl" class="form-label">Facebook URL</label>
+                    <input asp-for="ContactInfo.FacebookUrl" class="form-control" />
+                    <span asp-validation-for="ContactInfo.FacebookUrl" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label asp-for="ContactInfo.TwitterUrl" class="form-label">Twitter URL</label>
+                    <input asp-for="ContactInfo.TwitterUrl" class="form-control" />
+                    <span asp-validation-for="ContactInfo.TwitterUrl" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label asp-for="ContactInfo.InstagramUrl" class="form-label">Instagram URL</label>
+                    <input asp-for="ContactInfo.InstagramUrl" class="form-control" />
+                    <span asp-validation-for="ContactInfo.InstagramUrl" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label asp-for="ContactInfo.MapEmbedCode" class="form-label">Google Maps Embed Code</label>
+            <textarea asp-for="ContactInfo.MapEmbedCode" class="form-control" rows="5"></textarea>
+            <span asp-validation-for="ContactInfo.MapEmbedCode" class="text-danger"></span>
+            <small class="form-text text-muted">Paste the iframe embed code from Google Maps.</small>
+        </div>
+        
+        @if (!string.IsNullOrEmpty(Model.ContactInfo.MapEmbedCode))
+        {
+            <div class="mb-3">
+                <label class="form-label">Map Preview:</label>
+                <div class="map-preview">
+                    @Html.Raw(Model.ContactInfo.MapEmbedCode)
+                </div>
+            </div>
+        }
+        
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save"></i> Save
+            </button>
+            <a asp-area="Admin" asp-page="/Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
