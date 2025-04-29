@@ -256,15 +256,15 @@ namespace demo_school_website.Migrations
             migrationBuilder.InsertData(
                 table: "ContactInfo",
                 columns: new[] { "Id", "Address", "Email", "FacebookUrl", "InstagramUrl", "MapEmbedCode", "Phone", "TwitterUrl", "UpdatedAt" },
-                values: new object[] { 1, "123 School Street, City, State, ZIP", "info@schoolwebsite.com", null, null, "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sbg!4v1588812740225!5m2!1sen!2sbg\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"></iframe>", "(555) 123-4567", null, new DateTime(2025, 4, 29, 8, 49, 50, 468, DateTimeKind.Utc).AddTicks(8036) });
+                values: new object[] { 1, "123 School Street, City, State, ZIP", "info@schoolwebsite.com", null, null, "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sbg!4v1588812740225!5m2!1sen!2sbg\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"></iframe>", "(555) 123-4567", null, new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
 
             migrationBuilder.InsertData(
                 table: "ContentPages",
                 columns: new[] { "Id", "Content", "CreatedAt", "IsPublished", "Slug", "Title", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, "<h1>Welcome to Our School</h1><p>We provide quality education for all students.</p>", new DateTime(2025, 4, 29, 8, 49, 50, 467, DateTimeKind.Utc).AddTicks(9089), true, "home", "Home", new DateTime(2025, 4, 29, 8, 49, 50, 467, DateTimeKind.Utc).AddTicks(9332) },
-                    { 2, "<h1>About Our School</h1><p>Learn about our history, mission, and values.</p>", new DateTime(2025, 4, 29, 8, 49, 50, 468, DateTimeKind.Utc).AddTicks(142), true, "about", "About Us", new DateTime(2025, 4, 29, 8, 49, 50, 468, DateTimeKind.Utc).AddTicks(142) }
+                    { 1, "<h1>Welcome to Our School</h1><p>We provide quality education for all students.</p>", new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, "home", "Home", new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, "<h1>About Our School</h1><p>Learn about our history, mission, and values.</p>", new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, "about", "About Us", new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.CreateIndex(

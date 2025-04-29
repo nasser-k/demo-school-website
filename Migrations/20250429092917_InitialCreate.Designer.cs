@@ -11,7 +11,7 @@ using demo_school_website.Data;
 namespace demo_school_website.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250429084953_InitialCreate")]
+    [Migration("20250429092917_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -268,7 +268,7 @@ namespace demo_school_website.Migrations
                             Email = "info@schoolwebsite.com",
                             MapEmbedCode = "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sbg!4v1588812740225!5m2!1sen!2sbg\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"></iframe>",
                             Phone = "(555) 123-4567",
-                            UpdatedAt = new DateTime(2025, 4, 29, 8, 49, 50, 468, DateTimeKind.Utc).AddTicks(8036)
+                            UpdatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -310,21 +310,21 @@ namespace demo_school_website.Migrations
                         {
                             Id = 1,
                             Content = "<h1>Welcome to Our School</h1><p>We provide quality education for all students.</p>",
-                            CreatedAt = new DateTime(2025, 4, 29, 8, 49, 50, 467, DateTimeKind.Utc).AddTicks(9089),
+                            CreatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsPublished = true,
                             Slug = "home",
                             Title = "Home",
-                            UpdatedAt = new DateTime(2025, 4, 29, 8, 49, 50, 467, DateTimeKind.Utc).AddTicks(9332)
+                            UpdatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
                             Content = "<h1>About Our School</h1><p>Learn about our history, mission, and values.</p>",
-                            CreatedAt = new DateTime(2025, 4, 29, 8, 49, 50, 468, DateTimeKind.Utc).AddTicks(142),
+                            CreatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsPublished = true,
                             Slug = "about",
                             Title = "About Us",
-                            UpdatedAt = new DateTime(2025, 4, 29, 8, 49, 50, 468, DateTimeKind.Utc).AddTicks(142)
+                            UpdatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
