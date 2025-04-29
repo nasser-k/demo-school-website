@@ -291,3 +291,4 @@ D:\Projects\ASP.NET Projects\demo-school-website\obj\Debug\net9.0\refint\demo-sc
 D:\Projects\ASP.NET Projects\demo-school-website\obj\Debug\net9.0\demo-school-website.pdb
 D:\Projects\ASP.NET Projects\demo-school-website\obj\Debug\net9.0\demo-school-website.genruntimeconfig.cache
 D:\Projects\ASP.NET Projects\demo-school-website\obj\Debug\net9.0\ref\demo-school-website.dll
+D:\Projects\ASP.NET Projects\demo-school-website\obj\Debug\net9.0\compressed\ai5w9b461h-9h3flyrq72.gz

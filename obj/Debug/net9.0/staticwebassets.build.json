@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DHPnFI/J7pQbGa2YiHs87jRTJhpZae3gyF5vL6Nn7Jw=",
+  "Hash": "xfOd/Vdqj0mqJ7xfUGrW4fHgFiyUSpfXG/e5FDyUY9I=",
   "Source": "demo-school-website",
   "BasePath": "_content/demo-school-website",
   "Mode": "Default",
@@ -2180,6 +2180,27 @@
       "OriginalItemSpec": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
+      "Identity": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\obj\\Debug\\net9.0\\compressed\\ai5w9b461h-9h3flyrq72.gz",
+      "SourceId": "demo-school-website",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/demo-school-website",
+      "RelativePath": "css/admin#[.{fingerprint=9h3flyrq72}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\wwwroot\\css\\admin.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "t072jim59i",
+      "Integrity": "81SUvry1107EyqD+8D6LNTTxEOs95AqLLGTc3eI5hSk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\wwwroot\\css\\admin.css"
+    },
+    {
       "Identity": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\obj\\Debug\\net9.0\\compressed\\b9lhb08218-ttgo8qnofa.gz",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
@@ -4028,6 +4049,27 @@
       "OriginalItemSpec": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\demo-school-website.bundle.scp.css"
     },
     {
+      "Identity": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\wwwroot\\css\\admin.css",
+      "SourceId": "demo-school-website",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\wwwroot\\",
+      "BasePath": "_content/demo-school-website",
+      "RelativePath": "css/admin#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9h3flyrq72",
+      "Integrity": "oxMZ9cvQEoWa1Qb7tL5Gz3iPMIcXVmJCFZdWQKr/EmY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin.css"
+    },
+    {
       "Identity": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\wwwroot\\css\\site.css",
       "SourceId": "demo-school-website",
       "SourceType": "Discovered",
@@ -5352,6 +5394,304 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "css/admin.9h3flyrq72.css",
+      "AssetFile": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\obj\\Debug\\net9.0\\compressed\\ai5w9b461h-9h3flyrq72.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001683501684"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "593"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"81SUvry1107EyqD+8D6LNTTxEOs95AqLLGTc3eI5hSk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 08:55:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"oxMZ9cvQEoWa1Qb7tL5Gz3iPMIcXVmJCFZdWQKr/EmY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9h3flyrq72"
+        },
+        {
+          "Name": "label",
+          "Value": "css/admin.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oxMZ9cvQEoWa1Qb7tL5Gz3iPMIcXVmJCFZdWQKr/EmY="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.9h3flyrq72.css",
+      "AssetFile": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\wwwroot\\css\\admin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1539"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oxMZ9cvQEoWa1Qb7tL5Gz3iPMIcXVmJCFZdWQKr/EmY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 08:55:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9h3flyrq72"
+        },
+        {
+          "Name": "label",
+          "Value": "css/admin.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oxMZ9cvQEoWa1Qb7tL5Gz3iPMIcXVmJCFZdWQKr/EmY="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.9h3flyrq72.css.gz",
+      "AssetFile": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\obj\\Debug\\net9.0\\compressed\\ai5w9b461h-9h3flyrq72.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "593"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"81SUvry1107EyqD+8D6LNTTxEOs95AqLLGTc3eI5hSk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 08:55:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9h3flyrq72"
+        },
+        {
+          "Name": "label",
+          "Value": "css/admin.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-81SUvry1107EyqD+8D6LNTTxEOs95AqLLGTc3eI5hSk="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.css",
+      "AssetFile": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\obj\\Debug\\net9.0\\compressed\\ai5w9b461h-9h3flyrq72.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001683501684"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "593"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"81SUvry1107EyqD+8D6LNTTxEOs95AqLLGTc3eI5hSk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 08:55:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"oxMZ9cvQEoWa1Qb7tL5Gz3iPMIcXVmJCFZdWQKr/EmY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oxMZ9cvQEoWa1Qb7tL5Gz3iPMIcXVmJCFZdWQKr/EmY="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.css",
+      "AssetFile": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\wwwroot\\css\\admin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1539"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oxMZ9cvQEoWa1Qb7tL5Gz3iPMIcXVmJCFZdWQKr/EmY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 08:55:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oxMZ9cvQEoWa1Qb7tL5Gz3iPMIcXVmJCFZdWQKr/EmY="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.css.gz",
+      "AssetFile": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\obj\\Debug\\net9.0\\compressed\\ai5w9b461h-9h3flyrq72.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "593"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"81SUvry1107EyqD+8D6LNTTxEOs95AqLLGTc3eI5hSk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 08:55:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-81SUvry1107EyqD+8D6LNTTxEOs95AqLLGTc3eI5hSk="
+        }
+      ]
+    },
     {
       "Route": "css/site.b9sayid5wm.css",
       "AssetFile": "D:\\Projects\\ASP.NET Projects\\demo-school-website\\obj\\Debug\\net9.0\\compressed\\1umv2xaf3c-b9sayid5wm.gz",

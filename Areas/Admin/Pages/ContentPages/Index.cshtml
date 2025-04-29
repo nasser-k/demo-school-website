@@ -26,14 +26,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var page in Model.ContentPages)
+                    @foreach (var contentPage in Model.ContentPages)
                     {
                         <tr>
-                            <td>@page.Title</td>
-                            <td>@page.Slug</td>
-                            <td>@page.UpdatedAt.ToString("MMM dd, yyyy")</td>
+                            <td>@contentPage.Title</td>
+                            <td>@contentPage.Slug</td>
+                            <td>@contentPage.UpdatedAt.ToString("MMM dd, yyyy")</td>
                             <td>
-                                @if (page.IsPublished)
+                                @if (contentPage.IsPublished)
                                 {
                                     <span class="badge bg-success status-badge">Published</span>
                                 }
@@ -43,13 +43,13 @@
                                 }
                             </td>
                             <td class="action-buttons">
-                                <a asp-page="Edit" asp-route-id="@page.Id" class="btn btn-sm btn-primary">
+                                <a asp-page="Edit" asp-route-id="@contentPage.Id" class="btn btn-sm btn-primary">
                                     <i class="bi bi-pencil"></i> Edit
                                 </a>
-                                <a asp-page="Delete" asp-route-id="@page.Id" class="btn btn-sm btn-danger">
+                                <a asp-page="Delete" asp-route-id="@contentPage.Id" class="btn btn-sm btn-danger">
                                     <i class="bi bi-trash"></i> Delete
                                 </a>
-                                <a href="/@page.Slug" target="_blank" class="btn btn-sm btn-info">
+                                <a href="/@contentPage.Slug" target="_blank" class="btn btn-sm btn-info">
                                     <i class="bi bi-eye"></i> View
                                 </a>
                             </td>
