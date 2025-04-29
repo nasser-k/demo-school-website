@@ -1,0 +1,97 @@
+@page
+@model demo_school_website.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Contact Us</h1>
+            <p class="lead">We'd love to hear from you. Please use the form below to get in touch with us.</p>
+            
+            <form method="post" class="mt-4">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            
+            @if (Model.SuccessMessage != null)
+            {
+                <div class="alert alert-success mt-4">
+                    @Model.SuccessMessage
+                </div>
+            }
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3>School Information</h3>
+                    <hr>
+                    <div class="mb-3">
+                        <h5><i class="bi bi-geo-alt-fill text-primary"></i> Address</h5>
+                        <p>@Model.ContactInfo.Address</p>
+                    </div>
+                    <div class="mb-3">
+                        <h5><i class="bi bi-telephone-fill text-primary"></i> Phone</h5>
+                        <p>@Model.ContactInfo.Phone</p>
+                    </div>
+                    <div class="mb-3">
+                        <h5><i class="bi bi-envelope-fill text-primary"></i> Email</h5>
+                        <p><a href="mailto:@Model.ContactInfo.Email">@Model.ContactInfo.Email</a></p>
+                    </div>
+                    
+                    <h5 class="mt-4">Follow Us</h5>
+                    <div class="social-icons">
+                        @if (!string.IsNullOrEmpty(Model.ContactInfo.FacebookUrl))
+                        {
+                            <a href="@Model.ContactInfo.FacebookUrl" target="_blank" class="me-2">
+                                <i class="bi bi-facebook fs-3 text-primary"></i>
+                            </a>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.ContactInfo.TwitterUrl))
+                        {
+                            <a href="@Model.ContactInfo.TwitterUrl" target="_blank" class="me-2">
+                                <i class="bi bi-twitter fs-3 text-primary"></i>
+                            </a>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.ContactInfo.InstagramUrl))
+                        {
+                            <a href="@Model.ContactInfo.InstagramUrl" target="_blank" class="me-2">
+                                <i class="bi bi-instagram fs-3 text-primary"></i>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <h3>Location</h3>
+                @if (!string.IsNullOrEmpty(Model.ContactInfo.MapEmbedCode))
+                {
+                    @Html.Raw(Model.ContactInfo.MapEmbedCode)
+                }
+                else
+                {
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sbg!4v1588812740225!5m2!1sen!2sbg" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

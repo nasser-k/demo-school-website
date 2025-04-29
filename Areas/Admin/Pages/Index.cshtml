@@ -1,0 +1,73 @@
+@page
+@model demo_school_website.Areas.Admin.Pages.IndexModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container">
+    <h1 class="mb-4">Admin Dashboard</h1>
+    
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Content Pages</h5>
+                    <p class="card-text">Manage website content pages</p>
+                    <a asp-page="/ContentPages/Index" class="btn btn-light">Manage</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Staff</h5>
+                    <p class="card-text">Manage staff and teacher profiles</p>
+                    <a asp-page="/Staff/Index" class="btn btn-light">Manage</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card bg-info text-white">
+                <div class="card-body">
+                    <h5 class="card-title">News & Events</h5>
+                    <p class="card-text">Manage news and events</p>
+                    <a asp-page="/NewsEvents/Index" class="btn btn-light">Manage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Gallery</h5>
+                    <p class="card-text">Manage image gallery</p>
+                    <a asp-page="/Gallery/Index" class="btn btn-dark">Manage</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card bg-secondary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Contact Info</h5>
+                    <p class="card-text">Update contact information</p>
+                    <a asp-page="/Contact/Edit" class="btn btn-light">Edit</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title">View Website</h5>
+                    <p class="card-text">Go to the public website</p>
+                    <a asp-area="" asp-page="/Index" class="btn btn-light">Visit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

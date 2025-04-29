@@ -1,0 +1,86 @@
+@page
+@model demo_school_website.Areas.Admin.Pages.ContentPages.CreateModel
+@{
+    ViewData["Title"] = "Create Content Page";
+}
+
+<div class="container">
+    <h1>Create Content Page</h1>
+    <hr />
+    
+    <form method="post" class="admin-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+        <div class="mb-3">
+            <label asp-for="ContentPage.Title" class="form-label"></label>
+            <input asp-for="ContentPage.Title" class="form-control" />
+            <span asp-validation-for="ContentPage.Title" class="text-danger"></span>
+        </div>
+        
+        <div class="mb-3">
+            <label asp-for="ContentPage.Slug" class="form-label"></label>
+            <input asp-for="ContentPage.Slug" class="form-control" />
+            <span asp-validation-for="ContentPage.Slug" class="text-danger"></span>
+            <small class="form-text text-muted">The slug is used in the URL (e.g., /about-us)</small>
+        </div>
+        
+        <div class="mb-3">
+            <label asp-for="ContentPage.Content" class="form-label"></label>
+            <div id="editor" style="height: 300px;"></div>
+            <input type="hidden" asp-for="ContentPage.Content" id="content-input" />
+            <span asp-validation-for="ContentPage.Content" class="text-danger"></span>
+        </div>
+        
+        <div class="mb-3 form-check">
+            <input asp-for="ContentPage.IsPublished" class="form-check-input" />
+            <label asp-for="ContentPage.IsPublished" class="form-check-label"></label>
+        </div>
+        
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save"></i> Save
+            </button>
+            <a asp-page="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Back to List
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script>
+        // Initialize Quill editor
+        var quill = new Quill('#editor', {
+            theme: 'snow',
+            modules: {
+                toolbar: [
+                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                    ['bold', 'italic', 'underline', 'strike'],
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    [{ 'color': [] }, { 'background': [] }],
+                    ['link', 'image'],
+                    ['clean']
+                ]
+            }
+        });
+        
+        // When form is submitted, update the hidden input with Quill content
+        document.querySelector('form').addEventListener('submit', function() {
+            document.getElementById('content-input').value = quill.root.innerHTML;
+        });
+        
+        // Auto-generate slug from title
+        document.getElementById('ContentPage_Title').addEventListener('blur', function() {
+            var slugField = document.getElementById('ContentPage_Slug');
+            if (slugField.value === '') {
+                slugField.value = this.value
+                    .toLowerCase()
+                    .replace(/[^\w\s-]/g, '')
+                    .replace(/[\s_-]+/g, '-')
+                    .replace(/^-+|-+$/g, '');
+            }
+        });
+    </script>
+}

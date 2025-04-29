@@ -1,10 +1,174 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Hero Section -->
+<div class="hero-section bg-primary text-white py-5 mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-4">Welcome to Our School</h1>
+                <p class="lead">Providing quality education and nurturing young minds for a brighter future.</p>
+                <a href="/about" class="btn btn-light btn-lg mt-3">Learn More</a>
+            </div>
+            <div class="col-md-6">
+                <img src="https://via.placeholder.com/600x400" alt="School Building" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="bi bi-book text-primary" style="font-size: 3rem;"></i>
+                    <h3 class="card-title mt-3">Quality Education</h3>
+                    <p class="card-text">Our curriculum is designed to provide students with a comprehensive education that prepares them for future success.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="bi bi-people text-primary" style="font-size: 3rem;"></i>
+                    <h3 class="card-title mt-3">Experienced Staff</h3>
+                    <p class="card-text">Our dedicated teachers and staff are committed to providing the best educational experience for all students.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="bi bi-trophy text-primary" style="font-size: 3rem;"></i>
+                    <h3 class="card-title mt-3">Extracurricular Activities</h3>
+                    <p class="card-text">We offer a wide range of extracurricular activities to help students develop their talents and interests.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- News & Events Section -->
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Latest News & Events</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="News Image">
+                <div class="card-body">
+                    <h5 class="card-title">School Reopening Announcement</h5>
+                    <p class="card-text">We are excited to announce that our school will be reopening on September 1st with new safety protocols in place.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted on August 15, 2025
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Event Image">
+                <div class="card-body">
+                    <h5 class="card-title">Annual Science Fair</h5>
+                    <p class="card-text">Join us for our annual science fair where students will showcase their innovative projects and experiments.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted on August 10, 2025
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="News Image">
+                <div class="card-body">
+                    <h5 class="card-title">New Sports Facilities</h5>
+                    <p class="card-text">We are proud to announce the completion of our new state-of-the-art sports facilities for our students.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted on August 5, 2025
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-3">
+        <a href="/news" class="btn btn-outline-primary">View All News & Events</a>
+    </div>
+</div>
+
+<!-- Testimonials Section -->
+<div class="bg-light py-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center mb-4">What Parents Say</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text"><i class="bi bi-quote"></i> The teachers at this school are exceptional. My child has grown so much academically and socially since enrolling here.</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <div class="ms-3">
+                                <h6 class="mb-0">Jane Smith</h6>
+                                <small class="text-muted">Parent</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text"><i class="bi bi-quote"></i> I appreciate the school's focus on both academic excellence and character development. It's a well-rounded education.</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <div class="ms-3">
+                                <h6 class="mb-0">John Davis</h6>
+                                <small class="text-muted">Parent</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text"><i class="bi bi-quote"></i> The extracurricular activities offered have helped my child discover new interests and develop important life skills.</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <div class="ms-3">
+                                <h6 class="mb-0">Sarah Johnson</h6>
+                                <small class="text-muted">Parent</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="card bg-primary text-white p-5 shadow">
+                <div class="card-body">
+                    <h2 class="card-title">Ready to Join Our School?</h2>
+                    <p class="card-text lead">Contact us today to learn more about enrollment opportunities.</p>
+                    <a href="/contact" class="btn btn-light btn-lg mt-3">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
