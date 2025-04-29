@@ -1,0 +1,112 @@
+@page "{id:int}"
+@model demo_school_website.Areas.Admin.Pages.Staff.EditModel
+@{
+    ViewData["Title"] = "Edit Staff Member";
+}
+
+<div class="container">
+    <h1>Edit Staff Member</h1>
+    <hr />
+    
+    <form method="post" enctype="multipart/form-data" class="admin-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+        <input type="hidden" asp-for="Staff.Id" />
+        <input type="hidden" asp-for="Staff.CreatedAt" />
+        <input type="hidden" asp-for="Staff.ImagePath" />
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label asp-for="Staff.Name" class="form-label"></label>
+                    <input asp-for="Staff.Name" class="form-control" />
+                    <span asp-validation-for="Staff.Name" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label asp-for="Staff.Position" class="form-label"></label>
+                    <input asp-for="Staff.Position" class="form-control" />
+                    <span asp-validation-for="Staff.Position" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label asp-for="Staff.Email" class="form-label"></label>
+                    <input asp-for="Staff.Email" class="form-control" type="email" />
+                    <span asp-validation-for="Staff.Email" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="ImageFile" class="form-label">Photo</label>
+                    <input type="file" id="ImageFile" name="ImageFile" class="form-control" accept="image/*" />
+                    <small class="form-text text-muted">Upload a new photo to replace the current one (optional).</small>
+                </div>
+                
+                <div class="mb-3 form-check">
+                    <input asp-for="Staff.IsActive" class="form-check-input" />
+                    <label asp-for="Staff.IsActive" class="form-check-label"></label>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label asp-for="Staff.Bio" class="form-label"></label>
+                    <textarea asp-for="Staff.Bio" class="form-control" rows="10"></textarea>
+                    <span asp-validation-for="Staff.Bio" class="text-danger"></span>
+                </div>
+                
+                @if (!string.IsNullOrEmpty(Model.Staff.ImagePath))
+                {
+                    <div class="mt-3">
+                        <label class="form-label">Current Photo:</label>
+                        <img src="@Model.Staff.ImagePath" alt="@Model.Staff.Name" class="img-fluid image-preview" id="current-image" />
+                    </div>
+                }
+                else
+                {
+                    <div id="image-preview-container" class="mt-3 d-none">
+                        <label class="form-label">Photo Preview:</label>
+                        <img id="image-preview" class="img-fluid image-preview" />
+                    </div>
+                }
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save"></i> Save
+            </button>
+            <a asp-page="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Back to List
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script>
+        // Preview image before upload
+        document.getElementById('ImageFile').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    // If there's a current image, update it
+                    const currentImage = document.getElementById('current-image');
+                    if (currentImage) {
+                        currentImage.src = event.target.result;
+                    } else {
+                        // Otherwise show the preview container
+                        const previewContainer = document.getElementById('image-preview-container');
+                        const preview = document.getElementById('image-preview');
+                        
+                        previewContainer.classList.remove('d-none');
+                        preview.src = event.target.result;
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+}

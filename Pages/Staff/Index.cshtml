@@ -1,0 +1,94 @@
+@page
+@model demo_school_website.Pages.Staff.IndexModel
+@{
+    ViewData["Title"] = "Our Staff";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Our Staff</h1>
+    <p class="lead text-center mb-5">Meet our dedicated team of educators and staff members who are committed to providing the best educational experience for our students.</p>
+    
+    @if (Model.StaffList.Any())
+    {
+        <div class="row">
+            @foreach (var staff in Model.StaffList)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm staff-card">
+                        <div class="text-center pt-4">
+                            @if (!string.IsNullOrEmpty(staff.ImagePath))
+                            {
+                                <img src="@staff.ImagePath" alt="@staff.Name" class="rounded-circle staff-img" />
+                            }
+                            else
+                            {
+                                <div class="staff-placeholder">
+                                    <i class="bi bi-person-fill"></i>
+                                </div>
+                            }
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">@staff.Name</h4>
+                            <h6 class="card-subtitle mb-3 text-muted">@staff.Position</h6>
+                            <p class="card-text">@(staff.Bio?.Length > 150 ? staff.Bio.Substring(0, 150) + "..." : staff.Bio)</p>
+                            
+                            @if (!string.IsNullOrEmpty(staff.Email))
+                            {
+                                <a href="mailto:@staff.Email" class="btn btn-outline-primary mt-2">
+                                    <i class="bi bi-envelope"></i> Contact
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            <p>Staff information is currently being updated. Please check back later.</p>
+        </div>
+    }
+</div>
+
+@section Styles {
+    <style>
+        .staff-card {
+            transition: transform 0.3s;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .staff-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+        
+        .staff-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #f8f9fa;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .staff-placeholder {
+            width: 150px;
+            height: 150px;
+            background-color: #e9ecef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border: 5px solid #f8f9fa;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .staff-placeholder i {
+            font-size: 4rem;
+            color: #adb5bd;
+        }
+    </style>
+}
