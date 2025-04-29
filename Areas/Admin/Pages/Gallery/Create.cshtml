@@ -1,0 +1,72 @@
+@page
+@model demo_school_website.Areas.Admin.Pages.Gallery.CreateModel
+@{
+    ViewData["Title"] = "Add Gallery Image";
+}
+
+<div class="container">
+    <h1>Add Gallery Image</h1>
+    <hr />
+    
+    <form method="post" enctype="multipart/form-data" class="admin-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+        <div class="mb-3">
+            <label asp-for="GalleryImage.Title" class="form-label"></label>
+            <input asp-for="GalleryImage.Title" class="form-control" />
+            <span asp-validation-for="GalleryImage.Title" class="text-danger"></span>
+        </div>
+        
+        <div class="mb-3">
+            <label asp-for="GalleryImage.Description" class="form-label"></label>
+            <textarea asp-for="GalleryImage.Description" class="form-control" rows="3"></textarea>
+            <span asp-validation-for="GalleryImage.Description" class="text-danger"></span>
+        </div>
+        
+        <div class="mb-3">
+            <label for="ImageFile" class="form-label">Image</label>
+            <input type="file" id="ImageFile" name="ImageFile" class="form-control" accept="image/*" required />
+            <small class="form-text text-muted">Upload an image file (JPG, PNG, GIF).</small>
+        </div>
+        
+        <div class="mb-3 form-check">
+            <input asp-for="GalleryImage.IsActive" class="form-check-input" />
+            <label asp-for="GalleryImage.IsActive" class="form-check-label"></label>
+        </div>
+        
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save"></i> Save
+            </button>
+            <a asp-page="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Back to List
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script>
+        // Preview image before upload
+        document.getElementById('ImageFile').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    // Create preview if it doesn't exist
+                    let preview = document.getElementById('image-preview');
+                    if (!preview) {
+                        preview = document.createElement('img');
+                        preview.id = 'image-preview';
+                        preview.className = 'img-fluid mt-2 image-preview';
+                        e.target.parentNode.appendChild(preview);
+                    }
+                    preview.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+}

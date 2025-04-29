@@ -1,0 +1,80 @@
+@page "{id:int}"
+@model demo_school_website.Areas.Admin.Pages.Gallery.EditModel
+@{
+    ViewData["Title"] = "Edit Gallery Image";
+}
+
+<div class="container">
+    <h1>Edit Gallery Image</h1>
+    <hr />
+    
+    <form method="post" enctype="multipart/form-data" class="admin-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+        <input type="hidden" asp-for="GalleryImage.Id" />
+        <input type="hidden" asp-for="GalleryImage.ImagePath" />
+        <input type="hidden" asp-for="GalleryImage.CreatedAt" />
+        
+        <div class="mb-3">
+            <label asp-for="GalleryImage.Title" class="form-label"></label>
+            <input asp-for="GalleryImage.Title" class="form-control" />
+            <span asp-validation-for="GalleryImage.Title" class="text-danger"></span>
+        </div>
+        
+        <div class="mb-3">
+            <label asp-for="GalleryImage.Description" class="form-label"></label>
+            <textarea asp-for="GalleryImage.Description" class="form-control" rows="3"></textarea>
+            <span asp-validation-for="GalleryImage.Description" class="text-danger"></span>
+        </div>
+        
+        <div class="mb-3">
+            <label for="ImageFile" class="form-label">Image</label>
+            <input type="file" id="ImageFile" name="ImageFile" class="form-control" accept="image/*" />
+            <small class="form-text text-muted">Upload a new image file to replace the current one (optional).</small>
+            
+            @if (!string.IsNullOrEmpty(Model.GalleryImage.ImagePath))
+            {
+                <div class="mt-2">
+                    <label class="form-label">Current Image:</label>
+                    <img src="@Model.GalleryImage.ImagePath" alt="@Model.GalleryImage.Title" class="img-fluid image-preview" />
+                </div>
+            }
+        </div>
+        
+        <div class="mb-3 form-check">
+            <input asp-for="GalleryImage.IsActive" class="form-check-input" />
+            <label asp-for="GalleryImage.IsActive" class="form-check-label"></label>
+        </div>
+        
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save"></i> Save
+            </button>
+            <a asp-page="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Back to List
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script>
+        // Preview image before upload
+        document.getElementById('ImageFile').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    // Update existing preview
+                    const preview = document.querySelector('.image-preview');
+                    if (preview) {
+                        preview.src = event.target.result;
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+}

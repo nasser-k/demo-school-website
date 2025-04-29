@@ -1,0 +1,70 @@
+@page
+@model demo_school_website.Pages.Gallery.IndexModel
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">School Gallery</h1>
+    
+    @if (Model.GalleryImages.Any())
+    {
+        <div class="row" id="gallery">
+            @foreach (var image in Model.GalleryImages)
+            {
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 shadow-sm gallery-card">
+                        <a href="@image.ImagePath" data-lightbox="gallery" data-title="@image.Title">
+                            <img src="@image.ImagePath" class="card-img-top gallery-img" alt="@image.Title">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">@image.Title</h5>
+                            @if (!string.IsNullOrEmpty(image.Description))
+                            {
+                                <p class="card-text">@image.Description</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            <p>No gallery images available at this time. Please check back later.</p>
+        </div>
+    }
+</div>
+
+@section Styles {
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        .gallery-card {
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+        
+        .gallery-img {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        // Initialize lightbox
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': "Image %1 of %2"
+        });
+    </script>
+}
